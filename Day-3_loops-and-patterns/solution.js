@@ -72,6 +72,7 @@ function pyramid1(rows) {
 }
 // pyramid1(5);
 
+// 4 Print Inverted Pyramid Pattern
 function invertedPyramid(rows) {
   for (let i = 0; i < rows; i++) {
     // console.log(" ".repeat(rows - 1 - i) + "*".repeat(2 * i + 1));
