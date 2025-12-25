@@ -80,3 +80,31 @@ function invertedPyramid(rows) {
   }
 }
 // invertedPyramid(5);
+
+/* 
+// 5 Print Hollow Square Pattern
+
+Input: Rows = 5
+
+Output:
+
+*****
+*   *
+*   *
+*   *
+*****
+*/
+function hollowSquare(rows) {
+  for (let i = 1; i <= rows; i++) {
+    let str = "";
+    for (let j = 1; j <= rows; j++) {
+      if (i === 1 || j === 1 || i === rows || j === rows) {
+        str += "* ";
+      } else {
+        str += "  ";
+      }
+    }
+    console.log(str);
+  }
+}
+hollowSquare(5);
