@@ -63,11 +63,30 @@ function pyramid(rows) {
 }
 // pyramid(5);
 
-// 3.1 Print Pyramid Pattern
+// 3.2 Print Pyramid Pattern
 
 function pyramid1(rows) {
   for (let i = 0; i < rows; i++) {
     console.log(" ".repeat(rows - 1 - i) + "*".repeat(2 * i + 1));
+  }
+}
+// pyramid1(5);
+
+// 3.3 Print Pyramid Pattern
+
+function pyramid1(rows) {
+  for (let i = 0; i < rows; i++) {
+    let str = "";
+    const curRow = i + 1;
+
+    for (let j = 0; j < rows + i; j++) {
+      if (j < rows - curRow) {
+        str += " ";
+      } else {
+        str += "*";
+      }
+    }
+    console.log(str);
   }
 }
 // pyramid1(5);
@@ -107,4 +126,68 @@ function hollowSquare(rows) {
     console.log(str);
   }
 }
-hollowSquare(5);
+// hollowSquare(5);
+
+/*
+// 6 Print Hollow Pyramid Pattern
+
+Input: Rows = 5
+
+Output:
+
+    *
+   * *
+  *   *
+ *     *
+*********
+*/
+function hollowPyramid(row) {
+  for (let i = 1; i <= 2 * row - 1; i += 2) {
+    let str = "";
+    const currentRow = (i + 1) / 2;
+
+    for (let j = 1; j <= row + currentRow - 1; j++) {
+      if (
+        j <= row - currentRow ||
+        (j > row - currentRow + 1 &&
+          j < row + currentRow - 1 &&
+          i !== 2 * row - 1)
+      ) {
+        str += " ";
+      } else {
+        str += "*";
+      }
+    }
+
+    console.log(str);
+  }
+}
+// hollowPyramid(5);
+
+/*
+// 7. Print Alternating Binary Triangle
+
+Input: Rows = 5
+
+Output:
+
+1
+0 1
+1 0 1
+0 1 0 1
+1 0 1 0 1
+*/
+function AlternatingBinaryTree(row) {
+  for (let i = 1; i <= row; i++) {
+    let str = "";
+    for (let j = 1; j <= i; j++) {
+      if (i == j || (i + j) % 2 === 0) {
+        str += "1";
+      } else {
+        str += "0";
+      }
+    }
+    console.log(str);
+  }
+}
+AlternatingBinaryTree(5);
