@@ -190,4 +190,32 @@ function AlternatingBinaryTree(row) {
     console.log(str);
   }
 }
-AlternatingBinaryTree(5);
+// AlternatingBinaryTree(5);
+
+/* 8. Print Hollow Inverted Pyramid 
+Input: Rows = 5
+
+Output:
+
+*********
+ *     *
+  *   *
+   * *
+    *
+*/
+
+function InvertedHollowPyramid(row) {
+  for (let i = 1; i <= row; i++) {
+    let str = "";
+    for (let j = 1; j <= row * 2 - 1; j++) {
+      if (i === 1 || i === j || j === row * 2 - i) {
+        str += "*";
+      } else {
+        str += " ";
+      }
+    }
+    console.log(str);
+  }
+}
+
+InvertedHollowPyramid(5);
