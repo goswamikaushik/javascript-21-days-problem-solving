@@ -218,4 +218,120 @@ function InvertedHollowPyramid(row) {
   }
 }
 
-InvertedHollowPyramid(5);
+// InvertedHollowPyramid(5);
+
+/* 8. Print Butterfly Pattern
+
+Input: Rows = 5
+Output:
+
+*       *
+**     **
+***   ***
+**** ****
+*********
+**** ****
+***   ***
+**     **
+*       *
+
+*/
+
+function ButterflyPattern(row) {
+  const totalCol = row * 2 - 1;
+
+  for (let i = 1; i <= totalCol; i++) {
+    let str = "";
+    for (let j = 1; j <= totalCol; j++) {
+      if (
+        (j <= i && i <= row) ||
+        (i > row && j <= row * 2 - i) ||
+        (i <= row && j >= row * 2 - i) ||
+        (i > row && i <= j)
+      ) {
+        str += "*";
+      } else {
+        str += " ";
+      }
+    }
+    console.log(str);
+  }
+}
+
+// ButterflyPattern(7);
+
+/* 9 .Print Diamond Pattern
+Input: Rows = 3
+
+Output:
+
+    *
+   ***
+  *****
+   ***
+    *
+
+*/
+function printDiamond(rows) {
+  const totalRows = rows * 2 - 1;
+
+  for (let i = 1; i <= totalRows; i++) {
+    let line = "";
+    const level = i <= rows ? i : totalRows - i + 1;
+
+    // spaces
+    for (let s = 1; s <= rows - level; s++) {
+      line += " ";
+    }
+
+    // // stars
+    for (let star = 1; star <= 2 * level - 1; star++) {
+      line += "*";
+    }
+
+    console.log(line);
+  }
+}
+
+// printDiamond(3);
+
+/* 
+
+Print Hourglass Pattern
+Input: Rows = 5
+
+Output:
+
+*********
+ *******
+  *****
+   ***
+    *
+   ***
+  *****
+ *******
+*********
+*/
+function printHourglass(n) {
+  const totalRows = 2 * n - 1;
+  const totalCols = totalRows;
+
+  for (let i = 0; i < totalRows; i++) {
+    let line = "";
+
+    // Map row index for symmetry
+    const row = i < n ? i : totalRows - i - 1;
+
+    for (let j = 0; j < totalCols; j++) {
+      if (j >= row && j < totalCols - row) {
+        line += "*";
+      } else {
+        line += " ";
+      }
+    }
+
+    console.log(line);
+  }
+}
+
+printHourglass(5);
