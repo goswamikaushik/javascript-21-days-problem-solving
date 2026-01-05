@@ -297,7 +297,7 @@ function printDiamond(rows) {
 
 /* 
 
-Print Hourglass Pattern
+//11. Print Hourglass Pattern
 Input: Rows = 5
 
 Output:
@@ -334,4 +334,46 @@ function printHourglass(n) {
   }
 }
 
-printHourglass(5);
+// printHourglass(5);
+
+/*
+Print Multiplication Table (Single and Upto N)
+
+Input 1: Number = 5
+
+Output:
+
+5 x 1 = 5
+5 x 2 = 10
+...
+5 x 10 = 50
+
+*/
+function printMultiplication(n) {
+  for (let i = 1; i <= n * 2; i++) {
+    console.log(`${n} x ${i} = ${n * i}`);
+  }
+}
+// printMultiplication(5);
+
+/*Input 2: Upto = 3
+
+Output:
+
+Table of 1
+1 x 1 = 1
+...
+Table of 3
+3 x 10 = 30
+*/
+function printMultiplicationUpto(n) {
+  for (let j = 1; j <= n; j++) {
+    console.log(`Table of ${j}`);
+
+    for (let i = 1; i <= 10; i++) {
+      console.log(`${j} x ${i} = ${j * i}`);
+    }
+    console.log("");
+  }
+}
+printMultiplicationUpto(3);
